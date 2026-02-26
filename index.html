@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tender Evaluation System - Government of Odisha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="gov-header">
+        <img src="https://www.kindpng.com/picc/m/356-3566475_odisha-logo-odisha-government-hd-png-download.png" alt="Odisha" class="gov-logo">
+        <div class="gov-text">
+            <span class="gov-title">Government of Odisha</span>
+            <span class="gov-subtitle">&#x0935;&#x093F;&#x092D;&#x093E;&#x0917; &#x0924;&#x0939;&#x093C;&#x093F;&#x0928; (Sabhāga Tahiṇa)</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>AI Tender Evaluation System</h1>
+                <p>Intelligent Procurement Decision Support</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="upload-section">
+                <h2>📤 Upload Tender Documents</h2>
+
+                <div class="upload-container">
+                    <div class="upload-box" id="tenderUpload">
+                        <div class="upload-icon">📄</div>
+                        <h3>Upload Tender Document</h3>
+                        <p>Drag & drop or click to upload (PDF only)</p>
+                        <input type="file" id="tenderFile" accept=".pdf" hidden>
+                        <button class="btn-upload" onclick="document.getElementById('tenderFile').click()">
+                            Choose File
+                        </button>
+                    </div>
+
+                    <div class="upload-box" id="bidsUpload">
+                        <div class="upload-icon">📚</div>
+                        <h3>Upload Bid Proposals</h3>
+                        <p>Select multiple PDF files</p>
+                        <input type="file" id="bidFiles" accept=".pdf" multiple hidden>
+                        <button class="btn-upload" onclick="document.getElementById('bidFiles').click()">
+                            Choose Files
+                        </button>
+                    </div>
+                </div>
+
+                <div class="file-list" id="fileList">
+                </div>
+
+                <button class="btn-evaluate" id="evaluateBtn" onclick="evaluateBids()">
+                    🔍 Evaluate Bids
+                </button>
+            </section>
+
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>AI is analyzing bids... This may take a moment</p>
+            </div>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <h2>📊 Evaluation Results</h2>
+
+                <div class="summary-cards" id="summaryCards">
+                </div>
+
+                <div class="results-table-container">
+                    <h3>🏆 Ranked Bidders</h3>
+                    <table class="results-table" id="resultsTable">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Company</th>
+                                <th>Score</th>
+                                <th>Status</th>
+                                <th>Compliance</th>
+                                <th>Bid Amount (₹)</th>
+                                <th>Experience</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody">
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="risk-analysis" id="riskAnalysis">
+                    <h3>⚠️ Risk Flags</h3>
+                    <div id="riskFlags">
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-secondary" onclick="exportReport()">
+                        📥 Export Report
+                    </button>
+                    <button class="btn-secondary" onclick="resetSystem()">
+                        🔄 New Evaluation
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Government of Odisha - AI Tender Evaluation System (Prototype)
+                <p>@made by ommprakashpradhan77</p>
+            </p>
+            <p><a href="https://www.odisha.gov.in" target="_blank" rel="noopener" class="footer-link">Visit Odisha Government Website</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

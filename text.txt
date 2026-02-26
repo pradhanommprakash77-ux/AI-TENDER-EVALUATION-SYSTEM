@@ -1,0 +1,24 @@
+tender-evaluation-system/
+│
+├── backend/
+│   ├── app.py
+│   ├── document_processor.py
+│   ├── evaluation_engine.py
+│   ├── risk_analyzer.py
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+│
+├── data/
+│   ├── sample_tender.pdf
+│   └── sample_bids/
+│       ├── bid_company_a.pdf
+│       ├── bid_company_b.pdf
+│       └── bid_company_c.pdf
+│
+├── uploads/
+│
+└── run.py
